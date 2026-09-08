@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste: isto é golpe?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Teste: isto é golpe?</h1>
+  </header>
+
+  <main>
+    <a class="voltar" href="index.html">&larr; Voltar ao início</a>
+
+    <p>Leia a situação e escolha uma resposta.</p>
+
+    <p id="contador"><strong>Pergunta 1</strong></p>
+
+    <div class="caixa">
+      <p id="pergunta">Carregando...</p>
+    </div>
+
+    <div id="botoes">
+      <button id="btnGolpe">É golpe</button>
+      <button id="btnSeguro">É seguro</button>
+    </div>
+
+    <p id="resultado"></p>
+
+    <button id="proxima" hidden>Próxima pergunta</button>
+
+    <a class="voltar" href="index.html">&larr; Voltar ao início</a>
+  </main>
+
+  <footer class="rodape">
+    <p>Projeto de Extensão I – Ciência da Computação · Anhanguera de Indaiatuba.</p>
+  </footer>
+
+  <script src="acessibilidade.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>

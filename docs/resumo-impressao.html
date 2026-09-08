@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo para imprimir</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilo próprio desta folha, pensada para IMPRESSÃO em 1 página A4.
+       No navegador: use Arquivo > Imprimir (ou Ctrl+P) e escolha "Salvar como PDF". */
+    .folha {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 24px 0;
+    }
+    .folha h1 { font-size: 26px; color: var(--cor-primaria); margin-bottom: 4px; }
+    .folha h2 { font-size: 20px; margin: 16px 0 6px; }
+    .folha ul { padding-left: 22px; }
+    .folha li { font-size: 17px; margin-bottom: 6px; }
+    .assinatura { margin-top: 24px; font-size: 15px; color: #555; }
+    .no-print { margin: 16px auto; max-width: 700px; }
+
+    @media print {
+      .no-print, header.topo, .barra-acessibilidade { display: none !important; }
+      body { font-size: 13pt; padding: 0; }
+      .folha { padding: 0; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <h1>Resumo para imprimir</h1>
+  </header>
+
+  <div class="no-print">
+    <a class="voltar" href="index.html">&larr; Voltar ao início</a>
+    <p>Para imprimir ou salvar em PDF: pressione <strong>Ctrl + P</strong>.</p>
+  </div>
+
+  <div class="folha">
+    <h1>Não caia em golpes — guia rápido</h1>
+    <p>Para consultar sempre que receber uma mensagem ou ligação suspeita.</p>
+
+    <h2>As 3 iscas de todo golpe</h2>
+    <ul>
+      <li><strong>Pressa</strong> — "faça agora ou perde".</li>
+      <li><strong>Medo</strong> — "sua conta foi invadida".</li>
+      <li><strong>Oferta boa demais</strong> — "você ganhou um prêmio".</li>
+    </ul>
+
+    <h2>Regras de ouro</h2>
+    <ul>
+      <li>Banco <strong>nunca</strong> pede senha, código de SMS ou PIX por telefone.</li>
+      <li>Nunca repasse o <strong>código de 6 números</strong> que chega por SMS.</li>
+      <li>Não clique em <strong>links</strong> de mensagens. Abra o aplicativo oficial.</li>
+      <li><strong>Voz e vídeo podem ser falsos</strong> (feitos por Inteligência Artificial).</li>
+      <li>Pediram dinheiro com urgência? <strong>Desligue e ligue de volta</strong> para o número que você já tinha.</li>
+      <li>Combine uma <strong>palavra de segurança</strong> com a família.</li>
+    </ul>
+
+    <h2>Se você caiu</h2>
+    <ul>
+      <li>Ligue ao banco: bloqueio e pedido de devolução do PIX (MED).</li>
+      <li>Troque as senhas.</li>
+      <li>Boletim de Ocorrência: delegaciaeletronica.policiacivil.sp.gov.br</li>
+      <li>Conte para alguém de confiança. Não é vergonha.</li>
+    </ul>
+
+    <h2>Telefones</h2>
+    <ul>
+      <li>Polícia: <strong>190</strong> &nbsp;|&nbsp; Denúncia: <strong>181</strong> &nbsp;|&nbsp; Direitos do Idoso: <strong>100</strong></li>
+      <li>INSS: <strong>135</strong> &nbsp;|&nbsp; Procon-SP: <strong>151</strong></li>
+      <li>Meu banco: ____________________  Pessoa de confiança: ____________________</li>
+    </ul>
+
+    <p class="assinatura">
+      <strong>Projeto de extensão:</strong> Oficina de prevenção a golpes digitais
+      para pessoas idosas.<br>
+      <strong>Autor:</strong> Diego Nahuel Gangl — RA 2025500599 — Ciência da
+      Computação, Anhanguera de Indaiatuba.<br>
+      Programa de Contexto à Comunidade · ODS 4 e ODS 10 (ONU) · 2026.
+    </p>
+  </div>
+
+  <script src="acessibilidade.js"></script>
+</body>
+</html>

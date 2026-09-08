@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Cartilha "Idosos contra golpes digitais"
+   Folha de estilo única, com foco em ACESSIBILIDADE para pessoas idosas:
+   - fonte grande (mínimo 20px, títulos bem maiores)
+   - alto contraste (texto quase preto sobre fundo branco)
+   - botões e links grandes, fáceis de acertar com o dedo
+   - contorno visível quando o elemento está selecionado (foco)
+   Estes são princípios de Interação Homem-Computador (IHC) e acessibilidade.
+   ========================================================================== */
+
+/* Reset simples */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cor-texto: #1a1a1a;
+  --cor-fundo: #ffffff;
+  --cor-primaria: #0b5394;   /* azul escuro, bom contraste */
+  --cor-perigo: #b00020;     /* vermelho para alertas de golpe */
+  --cor-ok: #1b7a3d;         /* verde para "o que fazer" */
+  --cor-caixa: #eef4fb;      /* azul bem claro para caixas de destaque */
+  --raio: 12px;
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 20px;          /* base grande */
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  padding: 0 16px 64px;
+}
+
+/* Faixa de título no topo */
+header.topo {
+  background: var(--cor-primaria);
+  color: #fff;
+  padding: 20px 16px;
+  margin: 0 -16px 24px;
+  text-align: center;
+}
+header.topo h1 { font-size: 30px; }
+header.topo p { font-size: 20px; margin-top: 4px; }
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 { font-size: 28px; margin: 28px 0 12px; color: var(--cor-primaria); }
+h3 { font-size: 24px; margin: 20px 0 8px; }
+p, li { font-size: 20px; margin-bottom: 12px; }
+ul, ol { padding-left: 28px; }
+
+a { color: var(--cor-primaria); }
+
+/* Botão de voltar */
+.voltar {
+  display: inline-block;
+  margin: 16px 0;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: bold;
+}
+
+/* Cartões grandes da página inicial */
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+@media (min-width: 640px) {
+  .menu { grid-template-columns: 1fr 1fr; }
+}
+.cartao {
+  display: block;
+  background: var(--cor-caixa);
+  border: 3px solid var(--cor-primaria);
+  border-radius: var(--raio);
+  padding: 24px;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--cor-primaria);
+  text-align: center;
+  min-height: 96px;
+}
+.cartao:hover { background: #dce9f7; }
+
+/* Caixas de conteúdo dentro das páginas de golpe */
+.caixa {
+  border-radius: var(--raio);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-left: 8px solid #999;
+  background: #f6f6f6;
+}
+.caixa.perigo { border-left-color: var(--cor-perigo); background: #fdecef; }
+.caixa.ok     { border-left-color: var(--cor-ok);     background: #eaf6ee; }
+.caixa h3 { margin-top: 0; }
+.caixa.perigo h3 { color: var(--cor-perigo); }
+.caixa.ok h3     { color: var(--cor-ok); }
+
+/* Botões (usados no quiz) */
+button {
+  font-family: inherit;
+  font-size: 20px;
+  padding: 14px 20px;
+  border-radius: var(--raio);
+  border: 3px solid var(--cor-primaria);
+  background: #fff;
+  color: var(--cor-primaria);
+  font-weight: bold;
+  cursor: pointer;
+  min-height: 52px;
+  width: 100%;
+  margin: 8px 0;
+}
+button:hover { background: var(--cor-caixa); }
+
+/* Contorno de FOCO bem visível (acessibilidade para teclado) */
+a:focus, button:focus {
+  outline: 4px solid #ffbf00;
+  outline-offset: 2px;
+}
+
+/* Rodapé com a origem do projeto */
+footer.rodape {
+  max-width: 800px;
+  margin: 48px auto 0;
+  padding-top: 16px;
+  border-top: 2px solid #ccc;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Área de resultado do quiz */
+#resultado { font-size: 22px; font-weight: bold; margin-top: 16px; }
+.certo  { color: var(--cor-ok); }
+.errado { color: var(--cor-perigo); }
+
+/* ==========================================================================
+   Barra de acessibilidade (criada por acessibilidade.js)
+   ========================================================================== */
+.barra-acessibilidade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  background: #002b52;
+  padding: 10px;
+  margin: 0 -16px;
+}
+.barra-acessibilidade button {
+  width: auto;
+  margin: 0;
+  min-height: 44px;
+  padding: 8px 16px;
+  background: #fff;
+  color: #002b52;
+  border-color: #fff;
+  font-size: 18px;
+}
+.barra-acessibilidade button:hover { background: #ffe08a; }
+
+/* ==========================================================================
+   Modo de alto contraste (classe adicionada ao <body>)
+   Fundo preto, texto amarelo/branco — ajuda quem enxerga pouco.
+   ========================================================================== */
+body.alto-contraste {
+  background: #000;
+  color: #fff;
+}
+body.alto-contraste header.topo { background: #000; border-bottom: 3px solid #ffd400; }
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste a,
+body.alto-contraste .voltar,
+body.alto-contraste .cartao { color: #ffd400; }
+body.alto-contraste .cartao { background: #000; border-color: #ffd400; }
+body.alto-contraste .caixa {
+  background: #111;
+  color: #fff;
+  border-left-color: #ffd400;
+}
+body.alto-contraste .caixa.perigo h3 { color: #ff6b6b; }
+body.alto-contraste .caixa.ok h3 { color: #6bff8f; }
+body.alto-contraste button {
+  background: #000;
+  color: #ffd400;
+  border-color: #ffd400;
+}
+body.alto-contraste .barra-acessibilidade { background: #111; }
+body.alto-contraste .barra-acessibilidade button {
+  background: #000; color: #ffd400; border-color: #ffd400;
+}
+body.alto-contraste .rodape { color: #ccc; border-top-color: #555; }
+body.alto-contraste .certo  { color: #6bff8f; }
+body.alto-contraste .errado { color: #ff6b6b; }
