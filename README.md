@@ -7,6 +7,8 @@ Contexto à Comunidade.
 **Autor:** Diego Nahuel Gangl — RA 2025500599
 **Ano:** 2026
 
+**Site no ar:** <https://ganorg.github.io/projeto-extensao-golpes-idosos/>
+
 ## O que é
 
 Uma oficina de **prevenção a golpes digitais para pessoas idosas** (3 a 4
