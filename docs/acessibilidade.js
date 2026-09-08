@@ -16,7 +16,7 @@
   var contraste = lerSalvo("cartilha-contraste", "nao") === "sim";
 
   var MIN = 1;     // tamanho normal
-  var MAX = 1.8;   // limite para não quebrar o layout
+  var MAX = 2;     // limite para não quebrar o layout
   var PASSO = 0.15;
 
   function lerSalvo(chave, padrao) {
@@ -32,9 +32,11 @@
     try { localStorage.setItem(chave, valor); } catch (e) {}
   }
 
-  // Aplica a escala de fonte e o contraste na página
+  // Aplica a escala e o contraste na página.
+  // Usamos "zoom" porque os tamanhos de fonte no style.css estão em pixels
+  // fixos; o zoom amplia texto, botões e espaçamentos de uma vez só.
   function aplicar() {
-    document.documentElement.style.fontSize = (escala * 100) + "%";
+    document.body.style.zoom = escala;
     if (contraste) {
       document.body.classList.add("alto-contraste");
     } else {
