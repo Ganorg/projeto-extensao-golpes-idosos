@@ -50,8 +50,13 @@ function mostrarPergunta() {
   document.getElementById("contador").textContent =
     "Pergunta " + (indice + 1) + " de " + perguntas.length;
   document.getElementById("pergunta").textContent = p.texto;
-  document.getElementById("resultado").textContent = "";
+  var area = document.getElementById("resultado");
+  area.textContent = "";
+  area.className = "";
   document.getElementById("proxima").hidden = true;
+  // Reabilita os botões de resposta para a nova pergunta
+  document.getElementById("btnGolpe").disabled = false;
+  document.getElementById("btnSeguro").disabled = false;
 }
 
 // Recebe a resposta do usuário: verdadeiro = ele disse "é golpe"
@@ -61,12 +66,15 @@ function responder(disseQueEhGolpe) {
 
   if (disseQueEhGolpe === p.ehGolpe) {
     acertos = acertos + 1;
-    area.textContent = "Você acertou! " + p.explicacao;
+    area.textContent = "✔ Você acertou! " + p.explicacao;
     area.className = "certo";
   } else {
-    area.textContent = "Atenção: " + p.explicacao;
+    area.textContent = "✖ Atenção: " + p.explicacao;
     area.className = "errado";
   }
+  // Trava as respostas até avançar, para evitar cliques repetidos
+  document.getElementById("btnGolpe").disabled = true;
+  document.getElementById("btnSeguro").disabled = true;
   document.getElementById("proxima").hidden = false;
 }
 
