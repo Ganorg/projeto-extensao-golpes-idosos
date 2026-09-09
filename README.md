@@ -1,4 +1,4 @@
-# Idosos contra golpes digitais
+# Oficina de Prevenção a Golpes Digitais para Pessoas Idosas
 
 Projeto de extensão universitária do curso de **Ciência da Computação** da
 Anhanguera de Indaiatuba — componente **Projeto de Extensão I**, Programa de
