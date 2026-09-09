@@ -20,6 +20,19 @@
     .assinatura { margin-top: 24px; font-size: 15px; color: #555; }
     .no-print { margin: 16px auto; max-width: 700px; }
 
+    /* Botão grande de imprimir */
+    .btn-imprimir {
+      width: 100%;
+      background: var(--cor-ok);
+      color: #fff;
+      border-color: var(--cor-ok);
+      font-size: 1.35rem;
+      padding: 18px 20px;
+      min-height: 64px;
+    }
+    .btn-imprimir:hover { background: #15642f; border-color: #15642f; }
+    .dica-imprimir { margin-top: 10px; color: #4a4a4a; font-size: 1rem; }
+
     @media print {
       .no-print, header.topo, .barra-acessibilidade { display: none !important; }
       body { font-size: 13pt; padding: 0; }
@@ -35,7 +48,13 @@
 
   <div class="no-print">
     <a class="voltar" href="index.html">&larr; Voltar ao início</a>
-    <p>Para imprimir ou salvar em PDF: pressione <strong>Ctrl + P</strong>.</p>
+    <button type="button" class="btn-imprimir" onclick="window.print()">
+      🖨️ Imprimir esta folha
+    </button>
+    <p class="dica-imprimir">
+      Ao tocar no botão, vai abrir a janela de impressão. Para guardar no
+      computador em vez de imprimir, escolha <strong>"Salvar como PDF"</strong>.
+    </p>
   </div>
 
   <div class="folha">

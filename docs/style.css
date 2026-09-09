@@ -157,16 +157,36 @@ a:hover { color: var(--cor-primaria-escura); }
   box-shadow: 0 4px 12px rgba(11, 83, 148, 0.20);
 }
 
-/* Links secundários (folha para imprimir, sobre) — sem peso de botão */
-.links-material {
+/* Painéis "Cartilha impressa" e "Sobre o projeto" — destaque próprio,
+   diferente dos cartões de assunto (fundo branco, ícone e descrição) */
+.paineis {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 28px;
-  margin-top: 32px;
-  padding-top: 16px;
-  border-top: 1px solid #d5dde4;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
 }
-.links-material a { font-weight: bold; font-size: 1.1rem; }
+.painel {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 2px solid var(--cor-primaria);
+  border-left-width: 8px;
+  border-radius: var(--raio);
+  text-decoration: none;
+  color: var(--cor-texto);
+  transition: background 0.12s ease, box-shadow 0.12s ease;
+}
+.painel:hover,
+.painel:focus-visible {
+  background: var(--cor-caixa);
+  box-shadow: 0 4px 12px rgba(11, 83, 148, 0.18);
+}
+.painel-icone { font-size: 2.1rem; line-height: 1; flex-shrink: 0; }
+.painel-texto { display: flex; flex-direction: column; gap: 4px; }
+.painel-texto strong { color: var(--cor-primaria); font-size: 1.3rem; }
+.painel-texto span { font-size: 1.05rem; color: #333; }
 
 /* Caixas de conteúdo dentro das páginas */
 .caixa {
@@ -310,7 +330,10 @@ body.alto-contraste .barra-acessibilidade button {
 body.alto-contraste .rodape { color: #eee; }
 body.alto-contraste .grupo > h2 { border-left-color: #ffd400; }
 body.alto-contraste .grupo-dica { color: #ccc; }
-body.alto-contraste .links-material { border-top-color: #555; }
+body.alto-contraste .painel { background: #000; border-color: #ffd400; color: #fff; }
+body.alto-contraste .painel-texto strong { color: #ffd400; }
+body.alto-contraste .painel-texto span { color: #eee; }
+body.alto-contraste .btn-imprimir { background: #000; color: #ffd400; border-color: #ffd400; }
 body.alto-contraste #contador { background: #ffd400; color: #000; }
 body.alto-contraste #resultado.certo  { background: #062b12; color: #6bff8f; border-left-color: #6bff8f; }
 body.alto-contraste #resultado.errado { background: #2b0610; color: #ff6b6b; border-left-color: #ff6b6b; }
